@@ -1,0 +1,40 @@
+@import './css/variables';
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('./img/fabric_1.png');  
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+header{
+    height: 30vh;
+    
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .section-main{    
+       flex-basis: 90%;
+       min-height: 60vh;
+       border-top:.2vh solid $color-border ;
+       border-bottom:.2vh solid $color-border ;
+    }
+}
+
+footer{
+    height: 10vh;
+    color: $color-border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
