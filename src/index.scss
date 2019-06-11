@@ -10,8 +10,11 @@
 body{
     background-image: url('./img/fabric_1.png');  
     font-family: 'Hammersmith One', sans-serif;
-    color: aquamarine
+    font-size: .8vw;
+    
 }
+
+
 
 header{
     height: 30vh;
@@ -23,11 +26,70 @@ main{
     justify-content: center;
     align-items: center;
     
-    .section-main{    
+    .form-main{    
        flex-basis: 90%;
        min-height: 60vh;
        border-top:.2vh solid $color-border ;
        border-bottom:.2vh solid $color-border ;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-end;
+       
+
+       .form-part{                   
+           font-size: 2em;
+           display: flex;
+           width: 100%;
+           justify-content: center;   
+           align-items: center;        
+           min-height: 10vh;
+           margin: 5vh 0;
+            .inputData{                                              
+                border-radius: 6px;
+                border: .15vw solid $color-border;
+                font-weight: bold;              
+                align-self: center;    
+                       
+                
+            }
+            .part{
+                margin-left: 2vw;  
+                width: 14vw;
+                height: 2.5vw;
+                display: flex;               
+                
+                &.clearfix{
+                    flex-direction: column;
+                    align-self: flex-start
+                }
+                
+                label{
+                    margin-bottom: .5vw;
+                    
+                }
+            }
+            .label{
+                border-right: .3vh solid $color-border;
+                padding: 4vw;
+                width: 30vw;
+                
+            }
+            
+          
+       }
+       
+       .btnSend{
+        padding: 1.2vw;
+        font-size: 1.5em;
+        background-color:#594ae4;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        color: #ffffff;
+        border-radius: 8px;
+        align-self: center;
+        margin: 12vh 0;
+        }
     }
 }
 
