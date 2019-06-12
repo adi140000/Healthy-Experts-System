@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 class Main extends Component {
     state = {
-        age: '',
+        age:'',
         sex: 'male',
         temperature: '',
         pressure: '',
         pain: [],
-        nodes: '',
-        tired: true,
+        nodes: false,
+        tired: false,
         overweight: false,
         breath: false,
         vomiting: false
@@ -16,7 +16,15 @@ class Main extends Component {
 
     submitData = (e) => {
         e.preventDefault();
-        console.log(e.target)
+        fetch('http://localhost:3500/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state),
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
     }
 
     handle = (e) => {
@@ -107,7 +115,7 @@ class Main extends Component {
                         <input onChange={this.handle} checked={overweight} type='checkbox' className='inputData part' id='overweight' />
                     </div>
                     <div className='form-part'>
-                        <label className='label' htmlFor='breath'>Czy masz problemy z drogami oddechowymiswwww swsw wssw ?</label>
+                        <label className='label' htmlFor='breath'>Czy masz problemy z drogami oddechowym ?</label>
                         <input onChange={this.handle} checked={breath} type='checkbox' className='inputData part' id='breath' />
                     </div>
                     <div className='form-part'>
