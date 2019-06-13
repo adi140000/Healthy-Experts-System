@@ -74,11 +74,11 @@ class Main extends Component {
                 <form className='form-main' onSubmit={this.submitData}>
                     <div className='form-part'>
                         <label htmlFor='age' className='label'>Ile masz lat ?</label>
-                        <input id='age' className='inputData part' type='number' value={age} onChange={this.handle} />
+                        <input id='age'  className='inputData part' type='number' value={age}  onChange={this.handle} />
                     </div>
                     <div className='form-part'>
                         <label className='label'>Jakiej jestes płci ?</label>
-                        <select id='sex' className='inputData part' value={sex} onChange={this.handle}>
+                        <select id='sex' className='inputData part select' value={sex} onChange={this.handle}>
                             <option value='male'>Mezczyzna</option>
                             <option value='female'>Kobieta</option>
                         </select>
@@ -104,23 +104,23 @@ class Main extends Component {
 
                     <div className='form-part'>
                         <label className='label' htmlFor='nodes'>Czy masz powiekszone węzły chłonne ?</label>
-                        <input onChange={this.handle} checked={nodes} type='checkbox' id='nodes' className='inputData part' />
+                        <input onChange={this.handle} checked={nodes} type='checkbox' id='nodes' className='part' />
                     </div>
                     <div className='form-part'>
                         <label className='label' htmlFor='tired'>Czy szybko się męczysz ?</label>
-                        <input onChange={this.handle} checked={tired} type='checkbox' className='inputData part' id='tired' />
+                        <input onChange={this.handle} checked={tired} type='checkbox' className='part' id='tired' />
                     </div>
                     <div className='form-part'>
                         <label className='label' htmlFor='overweight'>Czy masz nadwage ?</label>
-                        <input onChange={this.handle} checked={overweight} type='checkbox' className='inputData part' id='overweight' />
+                        <input onChange={this.handle} checked={overweight} type='checkbox' className='part' id='overweight' />
                     </div>
                     <div className='form-part'>
                         <label className='label' htmlFor='breath'>Czy masz problemy z drogami oddechowym ?</label>
-                        <input onChange={this.handle} checked={breath} type='checkbox' className='inputData part' id='breath' />
+                        <input onChange={this.handle} checked={breath} type='checkbox' className='part' id='breath' />
                     </div>
                     <div className='form-part'>
                         <label className='label' htmlFor='vomiting'>Czy miałeś w ostatnim czasie wymioty / nudnosci / biegunke ?</label>
-                        <input onChange={this.handle} checked={vomiting} type='checkbox' className='inputData part' id='vomiting' />
+                        <input onChange={this.handle} checked={vomiting} type='checkbox' className='part' id='vomiting' />
                     </div>
 
                     <input type='submit' className='btnSend' value='Sprawdz' />
