@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './main/Home';
-import Check from './main/Check';
+import Done from './main/Done';
+import Error from './main/Error';
+
 
 class Main extends Component {
     state = {
         illnesses: [],
+        done: false,
     }
+
+
 
     handleIllnesses = (arr) => {
         console.log(arr);
-        const { illnesses } = this.state;
-       
         this.setState({
             illnesses: arr,
         })
+
     }
     render() {
-        const { illnesses } = this.state;
+        const { done, illnesses } = this.state;
         return (
             < main >
-                <Router>
 
-                    <Route exact path="/" render={() => (<Home illnesses={this.handleIllnesses} />)} />
-
+                <Router illnesses={illnesses}>
+                    <Route exact path="/" render={() => (<Home handleIllnesses={this.handleIllnesses} />)} />
+                    <Route path='/done' render={() => (done ? <Done illnesses={illnesses} /> : <Error />)} />
 
                 </Router>
+
             </main>
         );
     }

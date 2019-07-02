@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from "react-router-dom";
-
-
-
+import { withRouter } from "react-router-dom";
 
 class Main extends Component {
     state = {
@@ -18,9 +15,9 @@ class Main extends Component {
         vomiting: false
     }
 
-    submitData = async(e) => {
+    submitData = async (e) => {
         e.preventDefault();
-        const res=await  fetch('http://localhost:3500/data', {
+        const res = await fetch('http://localhost:3500/data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,8 +25,9 @@ class Main extends Component {
             body: JSON.stringify(this.state),
         })
         const data = await res.json();
-        const { illnesses } = this.props;
-        illnesses(data); 
+        const { handleIllnesses } = this.props;
+        handleIllnesses(data);
+        this.props.history.push('/done');
 
     }
 
@@ -138,4 +136,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default withRouter(Main);

@@ -104,4 +104,4 @@ app.post('/data', (req, res, next) => {
 });
 
 
-app.listen(3500, () => console.log('server fire'));
+app.listen(3500);
