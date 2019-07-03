@@ -25,8 +25,9 @@ class Main extends Component {
             body: JSON.stringify(this.state),
         })
         const data = await res.json();
-        const { handleIllnesses } = this.props;
-        handleIllnesses(data);
+        const { handleIllnesses,handleRoute } = this.props;
+        handleIllnesses(data);        
+        handleRoute();
         this.props.history.push('/done');
 
     }

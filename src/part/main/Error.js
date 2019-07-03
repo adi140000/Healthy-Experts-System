@@ -2,7 +2,7 @@ import React from 'react';
 
 const Error = (props) => {
     console.log(props);
-    return (<div className='form-main div-center'>404</div>);
+    return (<section className='form-main section-center'>404</section>);
 }
 
 export default Error;

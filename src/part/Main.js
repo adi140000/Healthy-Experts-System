@@ -11,10 +11,14 @@ class Main extends Component {
         done: false,
     }
 
+    handleRoute = () => {
+        const { done } = this.state;
+        this.setState({
+            done:!done,
+        })
+    }
 
-
-    handleIllnesses = (arr) => {
-        console.log(arr);
+    handleIllnesses = (arr) => {        
         this.setState({
             illnesses: arr,
         })
@@ -26,7 +30,7 @@ class Main extends Component {
             < main >
 
                 <Router illnesses={illnesses}>
-                    <Route exact path="/" render={() => (<Home handleIllnesses={this.handleIllnesses} />)} />
+                    <Route exact path="/" render={() => (<Home handleRoute={this.handleRoute} handleIllnesses={this.handleIllnesses} />)} />
                     <Route path='/done' render={() => (done ? <Done illnesses={illnesses} /> : <Error />)} />
 
                 </Router>
